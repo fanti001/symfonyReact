@@ -1,5 +1,38 @@
-controllers:
-    resource:
-        path: ../src/Controller/
-        namespace: App\Controller
-    type: attribute
+# controllers:
+#   resource:
+#     path: ../src/Controller/
+# namespace: App\Controller
+#   type: attribute
+
+home:
+    path: /
+    controller: App\Controller\HomeController::index
+    defaults:
+        reactRouting: null
+    requirements:
+        reactRouting: ".+"
+cropper:
+    path: /cropper
+    controller: App\Controller\HomeController::index
+
+add-user:
+    path: /add-user
+    controller: App\Controller\HomeController::index
+
+get-users:
+    path: /get-users
+    controller: App\Controller\HomeController::index
+
+getUsers:
+    path: /api/users/
+    controller: App\Controller\HomeController::getUsers
+
+#api:
+#     path: /admin/{reactRouting}
+#     defaults: { _controller: BiBundle:Admin:default, reactRouting: null }
+#     requirements:
+#         reactRouting: ".+"
+
+api:
+    path: /api/users/
+    controller: App\Controller\HomeController::getUsers
